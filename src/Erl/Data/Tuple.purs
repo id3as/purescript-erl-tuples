@@ -104,67 +104,108 @@ toNested10 :: forall a b c d e f g h i j. Tuple10 a b c d e f g h i j -> Nested.
 toNested10 = uncurry10 Nested.tuple10
 
 instance eqTuple1 :: (Eq a) => Eq (Tuple1 a) where
-  eq a b = uncurry1 (\a1 ->
-    (uncurry1 (\b1 -> a1 == b1) b))
+  eq a b = uncurry1
+    ( \a1 ->
+        (uncurry1 (\b1 -> a1 == b1) b)
+    )
     a
 
 instance eqTuple2 :: (Eq a, Eq b) => Eq (Tuple2 a b) where
-  eq a b = uncurry2 (\a1 a2 ->
-    (uncurry2 (\b1 b2 -> a1 == b1 && a2 == b2) b))
+  eq a b = uncurry2
+    ( \a1 a2 ->
+        (uncurry2 (\b1 b2 -> a1 == b1 && a2 == b2) b)
+    )
     a
 
 instance eqTuple3 :: (Eq a, Eq b, Eq c) => Eq (Tuple3 a b c) where
-  eq a b = uncurry3 (\a1 a2 a3 ->
-    (uncurry3 (\b1 b2 b3 -> a1 == b1 && a2 == b2 && a3 == b3) b))
+  eq a b = uncurry3
+    ( \a1 a2 a3 ->
+        (uncurry3 (\b1 b2 b3 -> a1 == b1 && a2 == b2 && a3 == b3) b)
+    )
     a
 
 instance eqTuple4 :: (Eq a, Eq b, Eq c, Eq d) => Eq (Tuple4 a b c d) where
-  eq a b = uncurry4 (\a1 a2 a3 a4 ->
-      (uncurry4 (\b1 b2 b3 b4 ->
-        a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4)
-      b))
+  eq a b = uncurry4
+    ( \a1 a2 a3 a4 ->
+        ( uncurry4
+            ( \b1 b2 b3 b4 ->
+                a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4
+            )
+            b
+        )
+    )
     a
 
 instance eqTuple5 :: (Eq a, Eq b, Eq c, Eq d, Eq e) => Eq (Tuple5 a b c d e) where
-  eq a b = uncurry5 (\a1 a2 a3 a4 a5 ->
-      (uncurry5 (\b1 b2 b3 b4 b5 ->
-        a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5)
-      b))
+  eq a b = uncurry5
+    ( \a1 a2 a3 a4 a5 ->
+        ( uncurry5
+            ( \b1 b2 b3 b4 b5 ->
+                a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5
+            )
+            b
+        )
+    )
     a
 
 instance eqTuple6 :: (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f) => Eq (Tuple6 a b c d e f) where
-  eq a b = uncurry6 (\a1 a2 a3 a4 a5 a6 ->
-      (uncurry6 (\b1 b2 b3 b4 b5 b6 ->
-        a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5 && a6 == b6)
-      b))
+  eq a b = uncurry6
+    ( \a1 a2 a3 a4 a5 a6 ->
+        ( uncurry6
+            ( \b1 b2 b3 b4 b5 b6 ->
+                a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5 && a6 == b6
+            )
+            b
+        )
+    )
     a
 
 instance eqTuple7 :: (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g) => Eq (Tuple7 a b c d e f g) where
-  eq a b = uncurry7 (\a1 a2 a3 a4 a5 a6 a7 ->
-      (uncurry7 (\b1 b2 b3 b4 b5 b6 b7 ->
-        a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5 && a6 == b6 && a7 == b7)
-      b))
+  eq a b = uncurry7
+    ( \a1 a2 a3 a4 a5 a6 a7 ->
+        ( uncurry7
+            ( \b1 b2 b3 b4 b5 b6 b7 ->
+                a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5 && a6 == b6 && a7 == b7
+            )
+            b
+        )
+    )
     a
 
 instance eqTuple8 :: (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h) => Eq (Tuple8 a b c d e f g h) where
-  eq a b = uncurry8 (\a1 a2 a3 a4 a5 a6 a7 a8 ->
-      (uncurry8 (\b1 b2 b3 b4 b5 b6 b7 b8 ->
-        a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5 && a6 == b6 && a7 == b7 && a8 == b8)
-      b))
+  eq a b = uncurry8
+    ( \a1 a2 a3 a4 a5 a6 a7 a8 ->
+        ( uncurry8
+            ( \b1 b2 b3 b4 b5 b6 b7 b8 ->
+                a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5 && a6 == b6 && a7 == b7 && a8 == b8
+            )
+            b
+        )
+    )
     a
 
 instance eqTuple9 :: (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i) => Eq (Tuple9 a b c d e f g h i) where
-  eq a b = uncurry9 (\a1 a2 a3 a4 a5 a6 a7 a8 a9 ->
-      (uncurry9 (\b1 b2 b3 b4 b5 b6 b7 b8 b9 ->
-        a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5 && a6 == b6 && a7 == b7 && a8 == b8 && a9 == b9)
-      b))
+  eq a b = uncurry9
+    ( \a1 a2 a3 a4 a5 a6 a7 a8 a9 ->
+        ( uncurry9
+            ( \b1 b2 b3 b4 b5 b6 b7 b8 b9 ->
+                a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5 && a6 == b6 && a7 == b7 && a8 == b8 && a9 == b9
+            )
+            b
+        )
+    )
     a
 
 instance eqTuple10 :: (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j) => Eq (Tuple10 a b c d e f g h i j) where
-  eq a b = uncurry10 (\a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 ->
-      (uncurry10 (\b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 ->
-        a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5 && a6 == b6 && a7 == b7 && a8 == b8 && a9 == b9 && a10 == b10)
-      b))
+  eq a b = uncurry10
+    ( \a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 ->
+        ( uncurry10
+            ( \b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 ->
+                a1 == b1 && a2 == b2 && a3 == b3 && a4 == b4 && a5 == b5 && a6 == b6 && a7 == b7 && a8 == b8 && a9 == b9 && a10 == b10
+            )
+            b
+        )
+    )
     a
 
 instance eq1Tuple1 :: Eq1 Tuple1 where
@@ -197,51 +238,92 @@ instance eq1Tuple9 :: (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h) => Eq1 (T
 instance eq1Tuple10 :: (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i) => Eq1 (Tuple10 a b c d e f g h i) where
   eq1 = eq
 
+instance ordTuple1 :: (Ord a) => Ord (Tuple1 a) where
+  compare a b = uncurry1
+    ( \a1 ->
+        (uncurry1 (\b1 -> compare a1 b1) b)
+    )
+    a
+
+instance ordTuple2 :: (Ord a, Ord b) => Ord (Tuple2 a b) where
+  compare a b = uncurry2
+    ( \a1 a2 ->
+        ( uncurry2
+            ( \b1 b2 -> do
+                let c1 = compare a1 b1
+                if c1 == EQ then compare a2 b2
+                else c1
+            )
+            b
+        )
+    )
+    a
+
 instance showTuple1 :: (Show a) => Show (Tuple1 a) where
-  show = uncurry1 (\a ->
-    "(Tuple1 " <> show a <> ")")
+  show = uncurry1
+    ( \a ->
+        "(Tuple1 " <> show a <> ")"
+    )
 
 instance showTuple2 :: (Show a, Show b) => Show (Tuple2 a b) where
-  show = uncurry2 (\a b ->
-    "(Tuple2 " <> show a <> " " <> show b <> ")")
+  show = uncurry2
+    ( \a b ->
+        "(Tuple2 " <> show a <> " " <> show b <> ")"
+    )
 
 instance showTuple3 :: (Show a, Show b, Show c) => Show (Tuple3 a b c) where
-  show = uncurry3 (\a b c ->
-    "(Tuple3 " <> show a <> " " <> show b <> " " <> show c <> ")")
+  show = uncurry3
+    ( \a b c ->
+        "(Tuple3 " <> show a <> " " <> show b <> " " <> show c <> ")"
+    )
 
 instance showTuple4 :: (Show a, Show b, Show c, Show d) => Show (Tuple4 a b c d) where
-  show = uncurry4 (\a b c d ->
-    "(Tuple4 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> ")")
+  show = uncurry4
+    ( \a b c d ->
+        "(Tuple4 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> ")"
+    )
 
 instance showTuple5 :: (Show a, Show b, Show c, Show d, Show e) => Show (Tuple5 a b c d e) where
-  show = uncurry5 (\a b c d e ->
-    "(Tuple5 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> ")")
+  show = uncurry5
+    ( \a b c d e ->
+        "(Tuple5 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> ")"
+    )
 
 instance showTuple6 :: (Show a, Show b, Show c, Show d, Show e, Show f) => Show (Tuple6 a b c d e f) where
-  show = uncurry6 (\a b c d e f ->
-    "(Tuple6 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> " " <> show f <> ")")
+  show = uncurry6
+    ( \a b c d e f ->
+        "(Tuple6 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> " " <> show f <> ")"
+    )
 
 instance showTuple7 :: (Show a, Show b, Show c, Show d, Show e, Show f, Show g) => Show (Tuple7 a b c d e f g) where
-  show = uncurry7 (\a b c d e f g ->
-    "(Tuple7 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> " " <> show f <> " " <> show g <> ")")
+  show = uncurry7
+    ( \a b c d e f g ->
+        "(Tuple7 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> " " <> show f <> " " <> show g <> ")"
+    )
 
 instance showTuple8 :: (Show a, Show b, Show c, Show d, Show e, Show f, Show g, Show h) => Show (Tuple8 a b c d e f g h) where
-  show = uncurry8 (\a b c d e f g h ->
-    "(Tuple8 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> " " <> show f <> " " <> show g <> " " <> show h <> ")")
+  show = uncurry8
+    ( \a b c d e f g h ->
+        "(Tuple8 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> " " <> show f <> " " <> show g <> " " <> show h <> ")"
+    )
 
 instance showTuple9 :: (Show a, Show b, Show c, Show d, Show e, Show f, Show g, Show h, Show i) => Show (Tuple9 a b c d e f g h i) where
-  show = uncurry9 (\a b c d e f g h i ->
-    "(Tuple9 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> " " <> show f <> " " <> show g <> " " <> show h <> " " <> show i <> ")")
+  show = uncurry9
+    ( \a b c d e f g h i ->
+        "(Tuple9 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> " " <> show f <> " " <> show g <> " " <> show h <> " " <> show i <> ")"
+    )
 
 instance showTuple10 :: (Show a, Show b, Show c, Show d, Show e, Show f, Show g, Show h, Show i, Show j) => Show (Tuple10 a b c d e f g h i j) where
-  show = uncurry10 (\a b c d e f g h i j ->
-    "(Tuple10 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> " " <> show f <> " " <> show g <> " " <> show h <> " " <> show i <> " " <> show j <> ")")
+  show = uncurry10
+    ( \a b c d e f g h i j ->
+        "(Tuple10 " <> show a <> " " <> show b <> " " <> show c <> " " <> show d <> " " <> show e <> " " <> show f <> " " <> show g <> " " <> show h <> " " <> show i <> " " <> show j <> ")"
+    )
 
 instance bifunctorTuple2 :: Bifunctor Tuple2 where
   bimap f g tuple = tuple2 (f (fst tuple)) (g (snd tuple))
 
 instance bitraversableTuple2 :: Bitraversable Tuple2 where
-  bitraverse f g t = tuple2 <$> f (fst t) <*> g (snd t) 
+  bitraverse f g t = tuple2 <$> f (fst t) <*> g (snd t)
   bisequence t = tuple2 <$> (fst t) <*> (snd t)
 
 instance bifoldableTuple :: Bifoldable Tuple2 where
